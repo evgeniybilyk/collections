@@ -29,7 +29,7 @@ public class cCollection {
         this.length = length;
     }
 
-    public void fillЕhroughAdd() {
+    public void fillThroughAdd() {
         long startTime = System.currentTimeMillis();
 
         Random rand = new Random();
@@ -41,6 +41,20 @@ public class cCollection {
         long elapsedTime = stopTime - startTime;
 
         System.out.println(className + " time add elements: " + elapsedTime);
+    }
+
+    public void fillThroughSet() {
+        long startTime = System.currentTimeMillis();
+
+        Random rand = new Random();
+        for(int i = 0; i < length; i++) {
+            ((List)collection).set(i, rand.nextInt(length));
+        }
+
+        long stopTime = System.currentTimeMillis();
+        long elapsedTime = stopTime - startTime;
+
+        System.out.println(className + " time set elements: " + elapsedTime);
     }
 
     public void delete() {

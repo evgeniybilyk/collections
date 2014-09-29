@@ -8,19 +8,18 @@ public class cMain {
         collection = new cCollection(new ArrayList());
         collection.setLength(10000);
 
-        collection.fillЕhroughAdd();
+        collection.fillThroughAdd();
         //System.out.println(collection.cCollectionGet());
-        collection.delete();
+        //collection.delete();
         //System.out.println(collection.cCollectionGet());
+        collection.fillThroughSet();
 
         //Testing class LinkedList
         collection.cCollectionSet(new LinkedList());
-        collection.fillЕhroughAdd();
+        collection.fillThroughAdd();
         //System.out.println(collection.cCollectionGet());
-        collection.delete();
+        //collection.delete();
         //System.out.println(collection.cCollectionGet());
-
-        Collection lst = new LinkedList();
-        ((LinkedList)lst).set(1, "srthsrthsrt");
+        collection.fillThroughSet();
     }
 }
