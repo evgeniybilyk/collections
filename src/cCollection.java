@@ -29,7 +29,7 @@ public class cCollection {
         this.length = length;
     }
 
-    public void fillThroughAdd() {
+    public void collAdd() {
         long startTime = System.currentTimeMillis();
 
         Random rand = new Random();
@@ -43,7 +43,7 @@ public class cCollection {
         System.out.println(className + " time add elements: " + elapsedTime);
     }
 
-    public void fillThroughSet() {
+    public void listSet() {
         long startTime = System.currentTimeMillis();
 
         Random rand = new Random();
