@@ -6,7 +6,7 @@ public class cMain {
 
         //Testing class ArrayList
         collection = new cCollection(new ArrayList());
-        collection.setLength(10000);
+        collection.setLength(100000);
 
         List[] collections = {
                 new ArrayList(),
@@ -17,6 +17,9 @@ public class cMain {
             collection.cCollectionSet(col);
             collection.collAdd();
             collection.listSet();
+            collection.collFor();
+            collection.collWhile();
+            collection.delete();
         }
 
         Set[] sets = {
