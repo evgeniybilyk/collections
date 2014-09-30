@@ -5,7 +5,7 @@ public class cMain {
         cCollection collection;
 
         //Testing class ArrayList
-        collection = new cCollection(new ArrayList());
+        collection = new cCollection();
         collection.setLength(100000);
 
         List[] collections = {
@@ -14,12 +14,13 @@ public class cMain {
         };
 
         for(List col : collections) {
-            collection.cCollectionSet(col);
-            collection.collAdd();
-            collection.listSet();
-            collection.collFor();
-            collection.collWhile();
-            collection.delete();
+//            collection.cCollectionSet(col);
+//            collection.collAdd();
+//            collection.listSet();
+//            collection.itFor();
+//            collection.itWhile();
+//            collection.itForeach();
+//            collection.delete();
         }
 
         Set[] sets = {
@@ -32,7 +33,13 @@ public class cMain {
             collection.cCollectionSet(set);
             collection.collAdd();
             //collection.listSet();
+            //collection.itFor();   !!! Не работает
+            collection.itWhile();
+            collection.itForeach();
+            collection.delete();
         }
+
+
 
         //collection.fillThroughAdd();
         //System.out.println(collection.cCollectionGet());

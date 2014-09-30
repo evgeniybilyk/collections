@@ -1,13 +1,29 @@
 import java.util.*;
 
-public class cCollection {
+public class cCollection
+{
+    /**
+     * Collection collection ...
+     */
     private Collection collection;
+
+    /**
+     * String className ...
+     */
     private String className;
+
+    /**
+     * Integer length ...
+     */
     private Integer length;
+
+    /**
+     * Iterator it ...
+     */
     private Iterator it;
 
     /**
-     * Constructor
+     * Class Constructor with param ...
      *
      * @param collection
      */
@@ -19,9 +35,17 @@ public class cCollection {
     }
 
     /**
+     * Class Constructor without params ...
+     */
+    public cCollection() {
+        //To change body of created methods use File | Settings | File Templates.
+    }
+
+    /**
      * Method for set collection field
      *
      * @param collection
+     * @return void
      */
     public void cCollectionSet(Collection collection) {
         this.collection = collection;
@@ -37,14 +61,30 @@ public class cCollection {
         return collection;
     }
 
+    /**
+     * Method for get field length
+     *
+     * @return Integer
+     */
     public Integer getLength() {
         return length;
     }
 
+    /**
+     * Method for set field length
+     *
+     * @param length
+     * @return void
+     */
     public void setLength(Integer length) {
         this.length = length;
     }
 
+    /**
+     * Method for add items in collections
+     *
+     * @return void
+     */
     public void collAdd() {
         long startTime = System.currentTimeMillis();
 
@@ -59,6 +99,11 @@ public class cCollection {
         System.out.println(className + " time add elements: " + elapsedTime);
     }
 
+    /**
+     * Method for add items in collections using Set
+     *
+     * @return void
+     */
     public void listSet() {
         long startTime = System.currentTimeMillis();
 
@@ -73,6 +118,11 @@ public class cCollection {
         System.out.println(className + " time set elements: " + elapsedTime);
     }
 
+    /**
+     * Method for delete items from collections
+     *
+     * @return void
+     */
     public void delete() {
         long startTime = System.currentTimeMillis();
 
@@ -88,12 +138,34 @@ public class cCollection {
         System.out.println(className + " time delete elements: " + elapsedTime);
     }
 
-    public void collFor() {
+    /**
+     *
+     * @return void
+     */
+    public void itForeach() {
+        long startTime = System.currentTimeMillis();
+
+        it = collection.iterator();
+        for(Object i : collection) {
+            //TODO something
+        }
+
+        long stopTime = System.currentTimeMillis();
+        long elapsedTime = stopTime - startTime;
+
+        System.out.println(className + " time 'Foreach' iteration: " + elapsedTime);
+    }
+
+    /**
+     *
+     * @return void
+     */
+    public void itFor() {
         long startTime = System.currentTimeMillis();
 
         it = collection.iterator();
         for(int i = 0; i < length; i++) {
-            Integer val = (Integer) it.next();
+            it.next();
         }
 
         long stopTime = System.currentTimeMillis();
@@ -102,7 +174,11 @@ public class cCollection {
         System.out.println(className + " time 'For' iteration: " + elapsedTime);
     }
 
-    public void collWhile() {
+    /**
+     *
+     * @return void
+     */
+    public void itWhile() {
         long startTime = System.currentTimeMillis();
 
         Iterator it = collection.iterator();
