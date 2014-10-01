@@ -22,6 +22,7 @@ public class cMain {
             collection.cCollectionSet(col);
             collection.collAdd();
             collection.listSet();
+            collection.listGetByIndex();
             collection.itFor();
             collection.itWhile();
             collection.itForeach();

@@ -132,6 +132,25 @@ public class cCollection
     }
 
     /**
+     * Method for get items by index in collection
+     *
+     * @return void
+     */
+    public void listGetByIndex() {
+        long startTime = System.currentTimeMillis();
+
+        Random rand = new Random();
+        for(int i = 0; i < length; i++) {
+            ((List)collection).get(i);
+        }
+
+        long stopTime = System.currentTimeMillis();
+        long elapsedTime = stopTime - startTime;
+
+        System.out.println(className + " time 'getByIndex' (" + length + " elements): " + elapsedTime);
+    }
+
+    /**
      * Method for delete items from collections
      *
      * @return void
