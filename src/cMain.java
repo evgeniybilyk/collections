@@ -2,57 +2,65 @@ import java.util.*;
 
 public class cMain {
     public static void main(String[] args) {
-        cCollection collection;
 
-        //Testing class ArrayList
-        collection = new cCollection();
+        System.out.println("Testing collections ...");
+        cCollection collection = new cCollection();
         collection.setLength(100000);
 
-        List[] collections = {
-                new ArrayList(),
-                new LinkedList()
+        List[] arrCollections = {
+                new ArrayList<Integer>(),
+                new LinkedList<Integer>()
         };
 
-        for(List col : collections) {
-//            collection.cCollectionSet(col);
-//            collection.collAdd();
-//            collection.listSet();
-//            collection.itFor();
-//            collection.itWhile();
-//            collection.itForeach();
-//            collection.delete();
-        }
-
-        Set[] sets = {
+        Set[] arrSets = {
                 new HashSet<Integer>(),
                 new TreeSet<Integer>(),
                 new LinkedHashSet<Integer>()
         };
 
-        for(Set set : sets) {
+        for(List col : arrCollections) {
+            collection.cCollectionSet(col);
+            collection.collAdd();
+            collection.listSet();
+            collection.itFor();
+            collection.itWhile();
+            collection.itForeach();
+            collection.delete();
+        }
+
+        for(Set set : arrSets) {
             collection.cCollectionSet(set);
             collection.collAdd();
-            //collection.listSet();
-            //collection.itFor();   !!! Не работает
+            //collection.listSet(); !!! Не работает
+            //collection.itFor();   !!! Не работает какого-то фига
             collection.itWhile();
             collection.itForeach();
             collection.delete();
         }
 
 
+        System.out.println("Testing synchronized collections ...");
+        cSynchronizedCollection synchCollection = new cSynchronizedCollection();
+        synchCollection.setLength(100000);
 
-        //collection.fillThroughAdd();
-        //System.out.println(collection.cCollectionGet());
-        //collection.delete();
-        //System.out.println(collection.cCollectionGet());
-        //collection.fillThroughSet();
+        for(List col : arrCollections) {
+            synchCollection.cCollectionSet(col);
+            synchCollection.collAdd();
+            synchCollection.listSet();
+            synchCollection.itFor();
+            synchCollection.itWhile();
+            synchCollection.itForeach();
+            synchCollection.delete();
+        }
 
-        //Testing class LinkedList
-        //collection.cCollectionSet(new LinkedList());
-        //collection.fillThroughAdd();
-        //System.out.println(collection.cCollectionGet());
-        //collection.delete();
-        //System.out.println(collection.cCollectionGet());
-        //collection.fillThroughSet();
+        for(Set set : arrSets) {
+            synchCollection.cCollectionSet(set);
+            synchCollection.collAdd();
+            //synchCollection.listSet(); !!! Не работает просто
+            //synchCollection.itFor();   !!! Не работает какого-то фига
+            synchCollection.itWhile();
+            synchCollection.itForeach();
+            synchCollection.delete();
+        }
     }
 }

@@ -5,22 +5,22 @@ public class cCollection
     /**
      * Collection collection ...
      */
-    private Collection collection;
+    protected Collection collection;
 
     /**
      * String className ...
      */
-    private String className;
+    protected String className;
 
     /**
      * Integer length ...
      */
-    private Integer length;
+    protected Integer length;
 
     /**
      * Iterator it ...
      */
-    private Iterator it;
+    protected Iterator it;
 
     /**
      * Class Constructor with param ...
@@ -29,9 +29,9 @@ public class cCollection
      */
     public cCollection(Collection collection) {
         this.collection = collection;
-        className = this.collection.getClass().getName();
-
         length = 10;
+
+        setCollClassName();
     }
 
     /**
@@ -39,6 +39,18 @@ public class cCollection
      */
     public cCollection() {
         //To change body of created methods use File | Settings | File Templates.
+    }
+
+    protected void setCollClassName() {
+        className = this.collection.getClass().getSimpleName();
+    }
+
+    public String getCollClassName() {
+        if(className == null) {
+            setCollClassName();
+        }
+
+        return className;
     }
 
     /**
@@ -49,7 +61,8 @@ public class cCollection
      */
     public void cCollectionSet(Collection collection) {
         this.collection = collection;
-        className = this.collection.getClass().getName();
+
+        setCollClassName();
     }
 
     /**
@@ -96,7 +109,7 @@ public class cCollection
         long stopTime = System.currentTimeMillis();
         long elapsedTime = stopTime - startTime;
 
-        System.out.println(className + " time add elements: " + elapsedTime);
+        System.out.println(className + " time 'add' (" + length + " elements): " + elapsedTime);
     }
 
     /**
@@ -115,7 +128,7 @@ public class cCollection
         long stopTime = System.currentTimeMillis();
         long elapsedTime = stopTime - startTime;
 
-        System.out.println(className + " time set elements: " + elapsedTime);
+        System.out.println(className + " time 'set' (" + length + " elements): " + elapsedTime);
     }
 
     /**
@@ -135,7 +148,7 @@ public class cCollection
         long stopTime = System.currentTimeMillis();
         long elapsedTime = stopTime - startTime;
 
-        System.out.println(className + " time delete elements: " + elapsedTime);
+        System.out.println(className + " time 'remove' (" + length + " elements): " + elapsedTime);
     }
 
     /**
@@ -153,7 +166,7 @@ public class cCollection
         long stopTime = System.currentTimeMillis();
         long elapsedTime = stopTime - startTime;
 
-        System.out.println(className + " time 'Foreach' iteration: " + elapsedTime);
+        System.out.println(className + " time 'Foreach' iteration (" + length + " elements): " + elapsedTime);
     }
 
     /**
@@ -171,7 +184,7 @@ public class cCollection
         long stopTime = System.currentTimeMillis();
         long elapsedTime = stopTime - startTime;
 
-        System.out.println(className + " time 'For' iteration: " + elapsedTime);
+        System.out.println(className + " time 'For' iteration(" + length + " elements): " + elapsedTime);
     }
 
     /**
@@ -189,6 +202,6 @@ public class cCollection
         long stopTime = System.currentTimeMillis();
         long elapsedTime = stopTime - startTime;
 
-        System.out.println(className + " time 'While' iteration: " + elapsedTime);
+        System.out.println(className + " time 'While' iteration (" + length + " elements): " + elapsedTime);
     }
 }
